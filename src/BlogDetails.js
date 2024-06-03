@@ -6,10 +6,10 @@ const BlogDetails = () => {
     const {id} = useParams();
     const navigate = useNavigate();
 
-    const {data:blog, error, isPending} = useFetch(`http://localhost:8000/blogs/${id}`)
+    const {data:blog, error, isPending} = useFetch(`https://blog-api-abgq.onrender.com/api/v1/blogs/find/${id}`)
 
     const deleteHandler =()=>{
-      fetch(`http://localhost:8000/blogs/${id}`, {
+      fetch(`https://blog-api-abgq.onrender.com/api/v1/blogs/${id}`, {
         method: 'DELETE'
       }).then(()=>{
         navigate('/'); 
@@ -26,11 +26,11 @@ const BlogDetails = () => {
         {blog && (
             <article>
                 <h2>{blog.title}</h2>
-                <h3>Written by: <strong>{blog.author}</strong></h3>
+                <h3>Written by: <strong>{blog.name}</strong></h3>
                 <div >
                 <p>{blog.body}</p>
                 </div>
-                {blog.author === 'ose' ? (<div><i><strong>Admin's post cannot be deleted </strong> </i> <button onClick={adminHandler}> Back </button></div>) : (<button onClick={deleteHandler}>delete</button>)}
+                {blog.name === 'ose' ? (<div><i><strong>Admin's post cannot be deleted </strong> </i> <button onClick={adminHandler}> Back </button></div>) : (<button onClick={deleteHandler}>delete</button>)}
              </article>
             )}
     </div>

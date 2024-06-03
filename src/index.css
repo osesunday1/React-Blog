@@ -152,19 +152,26 @@ button:hover{
   gap: 20px; /* Optional: Adds space between the columns */
 }
   
-.author-list{
+
+.author-list a{
+  list-style-type: none; 
+  text-decoration: none;
+  text-underline-offset: none;
+}
+.author-list li{
   margin: 20px;
   font-size: 20px;
   color: #f1356d;
   text-transform:uppercase;
   cursor: pointer;
+  list-style-type: none; 
 }
 
-.author-list:hover{
+.author-list li:hover{
   color: #696566;
 }
 
-.author-list:active{
+.author-list li:active{
   color: #696566;
 }
 
@@ -174,6 +181,26 @@ button:hover{
 
 .author-blog{
   margin-right: 100%;
+}
+
+/* Author blog previews / list */
+.author-blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+  cursor: pointer;
+}
+.author-blog-preview:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.author-blog-preview h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 8px;
+}
+
+.author-blog-preview a{
+  text-decoration: none;
 }
 
 @media (max-width: 600px) {

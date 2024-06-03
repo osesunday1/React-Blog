@@ -6,9 +6,9 @@ import useFetch from "./useFetch"
 
 const Home = () => {
 
-    const {data : blogs, isPending, error} = useFetch('http://localhost:8000/blogs')
- 
+    const {data, isPending, error} = useFetch('https://blog-api-abgq.onrender.com/api/v1/blogs')
 
+    const blogs = data
 
 
     return ( 
@@ -17,7 +17,7 @@ const Home = () => {
         <div className="home">
             {error && <div>{ error }</div>}
             {isPending && <div>loading...</div> }
-           {blogs && <BlogList blogs={blogs} title = {`All Blogs!`}  /> }
+           {blogs && <BlogList blogs={blogs} title = {`All Blogs!`} /> }
            
         </div>
         </>

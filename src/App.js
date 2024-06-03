@@ -17,8 +17,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<Create />} />
             <Route path="/authors" element={<Authors />} />
-            <Route path="/blogs/:id" element={<BlogDetails />} />
-            <Route path="/author/:aid" element={<SelectedAuthor />} />
+            <Route path="/blogs/find/:id" element={<BlogDetails />} />
+            <Route path="/blogs/find/author/:aid" element={<SelectedAuthor />} />
           </Routes>
         </div>
       </div>
